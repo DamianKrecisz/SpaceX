@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="nav d-flex-r">
+    <div class="border-icon">
+      <img
+        src="../../../../../assets/icon.jpg"
+        [routerLink]="'/search'"
+        class="icon-back"
+        alt="icon-back"
+      />
+    </div>
+    <span>Szczegóły lotu # {{ launch?.flight_number }}</span>
+  </div>
+  <div class="details d-flex-r">
+    <div class="box d-flex-c">
+      <span
+        >Lot:<strong>{{ launch?.name }}</strong>
+      </span>
+      <span
+        >Data lotu:
+        <strong> {{ launch?.date_local | dateFormat }}</strong></span
+      >
+      <span
+        >Status:
+        <strong>{{
+          launch?.success === true ? "Udany" : "Nieudany"
+        }}</strong></span
+      >
+    </div>
+    <div class="box d-flex-c">
+      <span
+        >Załoga: <strong>{{ launch?.crew?.length }}</strong>
+      </span>
+      <span
+        >Rakieta: <strong>{{ rocket }}</strong>
+      </span>
+      <span
+        >Start: <strong>{{ launchpad }}</strong>
+      </span>
+    </div>
+  </div>
+  <div class="gallery">
+    <p-galleria
+      [value]="images"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'border-radius': '20px' }"
+      [numVisible]="5"
+      [circular]="true"
+      [showItemNavigators]="true"
+      [showItemNavigatorsOnHover]="true"
+      *ngIf="photosLoaded"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item" class="galleria-image" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <div class="p-grid p-nogutter p-justify-center">
+          <img [src]="item" style="display: block" class="thumbnail" />
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+  <div class="description">
+    <p>
+      {{ launch?.details }}
+    </p>
+  </div>
+</div>

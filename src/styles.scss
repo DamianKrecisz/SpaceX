@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/app/theme/breakpoints.scss";
+@import "src/app/theme/variables.scss";
+
+* {
+  font-family: "ArialMT", "Arial", sans-serif;
+  color: $main-color;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+.d-flex-c {
+  display: flex;
+  flex-direction: column;
+}
+.d-flex-r {
+  display: flex;
+  flex-direction: row;
+}
+button {
+  cursor: pointer;
+}
+
+.w-50-100 {
+  width: 50%;
+  @include respond-to(medium) {
+    width: 100%;
+  }
+  @include respond-to(small) {
+    flex-direction: column !important;
+    .d-flex-c:nth-child(2) {
+      margin-top: 15px;
+    }
+  }
+}
+
+.container {
+  width: 1160px;
+  margin: 0 auto;
+  @include respond-to(medium) {
+    width: 728px;
+  }
+  @include respond-to(small) {
+    width: 440px;
+  }
+}
+input[type="text"] {
+  width: 275px !important;
+  @include respond-to(medium) {
+    width: 354px !important;
+  }
+  @include respond-to(small) {
+    width: 440px !important;
+    margin-right: 0;
+  }
+  width: 275px !important;
+  height: 40px;
+  padding: 2px 2px 2px 20px;
+  border-style: solid;
+  border-radius: 6px;
+  margin-right: 20px;
+  border-color: $main-color;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
+
+.checkbox {
+  align-items: center;
+  margin-top: 20px;
+  label {
+    margin-left: 20px;
+  }
+}
+
+.nav {
+  align-items: center;
+  border-bottom: 1px solid $main-color;
+  padding-bottom: 1vh;
+  margin-bottom: 80px;
+  height: 90px;
+  span {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+  }
+  @include respond-to(medium) {
+    height: 150px;
+  }
+  @include respond-to(small) {
+    height: 280px;
+  }
+}
+
+.p-galleria .p-galleria-thumbnail-container {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

@@ -1,0 +1,19 @@
+<div class="box d-flex-r">
+  <div class="image-container">
+    <img
+      *ngIf="launch.links.flickr.original[0]"
+      src="{{ launch.links.flickr.original[0] }}"
+      class="img"
+      alt="image"
+    />
+    <div *ngIf="!launch.links.flickr.original[0]" class="no-img">
+      <img src="../../../../assets/no-image.jpg" class="no-img" alt="image" />
+    </div>
+  </div>
+  <div class="details d-flex-c">
+    <span># {{ launch.flight_number }}</span>
+    <strong> {{ launch.name }}</strong>
+    <span>{{ launch.date_local | dateFormat }}</span>
+    <button [routerLink]="['/details', launch.id]">więcej ></button>
+  </div>
+</div>

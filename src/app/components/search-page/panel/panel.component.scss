@@ -1,0 +1,64 @@
+@import "src/app/theme/breakpoints.scss";
+@import "src/app/theme/variables.scss";
+@import "src/app/theme/mixins.scss";
+
+.box {
+  height: 255px;
+  margin-bottom: 15px;
+  @include box-shadow;
+  background-color: $white-no-transparent;
+  border-radius: 20px;
+  @include respond-to(small) {
+    height: 370px;
+    flex-direction: column;
+  }
+  .image-container {
+    width: 50%;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+
+    .img {
+      width: 100%;
+      @include respond-to(medium) {
+        height: 100%;
+      }
+      @include respond-to(small) {
+        border-top-right-radius: 20px;
+      }
+    }
+    @include respond-to(medium) {
+      height: 100%;
+    }
+    @include respond-to(small) {
+      height: 50%;
+      width: 100%;
+      border-bottom-left-radius: 0px;
+    }
+  }
+  .details {
+    margin: auto 50px;
+    height: 120px;
+    justify-content: space-between;
+
+    button {
+      width: 148px;
+      height: 40px;
+      background-color: $white-no-transparent;
+      border-style: solid;
+      border-color: $button-color;
+      border-radius: 10px;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      color: $button-color;
+    }
+  }
+}
+
+div.no-img {
+  width: 100%;
+  text-align: center;
+}
+.no-img {
+  height: 100%;
+}

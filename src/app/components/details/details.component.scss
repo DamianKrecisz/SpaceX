@@ -1,0 +1,87 @@
+@import "src/app/theme/breakpoints.scss";
+@import "src/app/theme/variables.scss";
+@import "src/app/theme/mixins.scss";
+
+.nav {
+  @include respond-to(medium) {
+    height: 90px;
+  }
+}
+.box {
+  border-width: 0px;
+  width: 570px;
+  height: 166px;
+  background: inherit;
+  background-color: $white-no-transparent;
+  border: none;
+  border-radius: 20px;
+  @include box-shadow;
+  padding: 40px 30px 0;
+  span {
+    margin-bottom: 5px;
+  }
+  @include respond-to(medium) {
+    width: 354px;
+  }
+  @include respond-to(small) {
+    width: 100%;
+  }
+}
+@include respond-to(small) {
+  .box:nth-child(2) {
+    margin-top: 20px;
+  }
+}
+.thumbnail {
+  width: 200px;
+  height: 100px;
+  @include respond-to(medium) {
+    width: 100px;
+    height: 50px;
+  }
+}
+.nav {
+  justify-content: flex-start;
+  span {
+    margin-left: 30px;
+  }
+}
+.details {
+  justify-content: space-between;
+  margin-bottom: 20px;
+  @include respond-to(small) {
+    flex-direction: column;
+  }
+}
+.description {
+  margin-top: 20px;
+  border-width: 0px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-height: 152px;
+  background: inherit;
+  background-color: $white-no-transparent;
+  border: none;
+  border-radius: 20px;
+  @include box-shadow;
+  padding: 20px 30px 20px;
+}
+.icon-back {
+  cursor: pointer;
+}
+.border-icon {
+  padding: 0 30px;
+  border-right: 1px solid $main-color;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.galleria-image {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  max-height: 700px;
+}
